@@ -15,41 +15,108 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
 })
 export class SampleBoardComponent implements OnInit {
 
-  todo = [
-    'Get to work',
-    'Pick up groceries',
-    'Go home',
-    'Fall asleep'
-  ];
+  lists = [
+    {
+      title: 'todo',
+      items: [
+        'Get to work',
+        'Pick up groceries',
+        'Go home',
+        'Fall asleep'
+      ]
+    },
+    {
+      title: 'done',
+      items: [
+        'Get up',
+        'Brush teeth',
+        'Take a shower',
+        'Check e-mail',
+        'Walk dog'
+      ]
+    },
+    {
+      title: 'done1',
+      items: [
+        'Get up',
+        'Brush teeth',
+        'Take a shower',
+        'Check e-mail',
+        'Walk dog'
+      ]
+    },
+    {
+      title: 'done2',
+      items: [
+        'Get up',
+        'Brush teeth',
+        'Take a shower',
+        'Check e-mail',
+        'Walk dog'
+      ]
+    },
+    {
+      title: 'done3',
+      items: [
+        'Get up',
+        'Brush teeth',
+        'Take a shower',
+        'Check e-mail',
+        'Walk dog'
+      ]
+    }
 
-  done = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
   ];
-  done1 = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
-  ];
-  done2 = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
-  ];
-  done3 = [
-    'Get up',
-    'Brush teeth',
-    'Take a shower',
-    'Check e-mail',
-    'Walk dog'
-  ];
+  todo = {
+    title: 'todo',
+    items: [
+      'Get to work',
+      'Pick up groceries',
+      'Go home',
+      'Fall asleep'
+    ]
+  };
+
+  done = {
+    title: 'done',
+    items: [
+      'Get up',
+      'Brush teeth',
+      'Take a shower',
+      'Check e-mail',
+      'Walk dog'
+    ]
+  };
+  done1 = {
+    title: 'done1',
+    items: [
+      'Get up',
+      'Brush teeth',
+      'Take a shower',
+      'Check e-mail',
+      'Walk dog'
+    ]
+  };
+  done2 = {
+    title: 'done2',
+    items: [
+      'Get up',
+      'Brush teeth',
+      'Take a shower',
+      'Check e-mail',
+      'Walk dog'
+    ]
+  };
+  done3 = {
+    title: 'done3',
+    items: [
+      'Get up',
+      'Brush teeth',
+      'Take a shower',
+      'Check e-mail',
+      'Walk dog'
+    ]
+  };
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {

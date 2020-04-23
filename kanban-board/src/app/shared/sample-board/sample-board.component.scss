@@ -1,6 +1,16 @@
 .overall-container{
     width: 100%;
+    
+  }
+  .example-headings{
+      display: flex;
+      .heading{
+        margin: 0 25px 25px 0;
+      }
+  }
+  .list-container{
     display: flex;
+    width: 100%;
   }
   .example-container {
     min-width: 10px;
