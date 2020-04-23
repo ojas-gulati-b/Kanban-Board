@@ -15,9 +15,20 @@
         <ng-container *ngFor="let stage of data">
             <ng-template carouselSlide>
                 <div class="carousel-item-container">
-                    <div class="heading">{{stage.title}}</div>
+                    <div class="stage-heading">{{stage.title}}
+                        <div class="stage-subheading">
+                            {{stage.subtitle}}
+                            <span class="dot">&#8226;</span>
+                            {{stage.items.length}}
+                        </div>
+                    </div>
                     <div class="content">
-                        <div class="deal" *ngFor="let deal of stage.items">{{deal}}</div>
+                        <div class="deal" *ngFor="let deal of stage.items">
+                            {{deal.dealTitle}}
+                            <div class="deal-sub-details">
+                                <div class="amount">{{deal.dealAmount}}</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </ng-template>

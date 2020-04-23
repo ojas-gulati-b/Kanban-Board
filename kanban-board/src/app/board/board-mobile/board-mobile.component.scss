@@ -36,31 +36,45 @@
 
     .mobile-view {
         .carousel-item-container {
-            .heading {
-                height: 50px;
-                background-color: #dcdcdc;
+            .stage-heading {
+                background-color: rgb(247, 247, 247);
                 color: #000000;
-                font-size: 16px;
-                line-height: 50px;
-                padding: 0 12px;
-                font-weight: 600;
+                font-size: 14px;
+                padding: 14px 12px;
+                font-weight: 500;
                 text-transform: capitalize;
+                .stage-subheading {
+                    color: #696969;
+                    font-size: 11px;
+                    font-weight: 400;
+                    margin-top: 4px;
+                    display: flex;
+                    .dot {
+                        margin: 0 7px;
+                        margin-top: 1px;
+                        font-size: 10px;
+                    }
+                }
             }
             .content {
                 // padding: 0 12px;
                 height: calc(100vh - 50px);
+                background-color: rgb(247, 247, 247);
                 .deal {
-                    padding: 20px 10px;
+                    padding: 14px 10px;
                     border-bottom: solid 1px #ccc;
                     color: rgba(0, 0, 0, 0.87);
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: space-between;
                     box-sizing: border-box;
                     cursor: move;
                     background: white;
                     font-size: 14px;
+                    .deal-sub-details {
+                        color: #696969;
+                        font-size: 11px;
+                        font-weight: 400;
+                        margin-top: 4px;
+                        display: flex;
+                    }
                 }
             }
         }

@@ -9,52 +9,129 @@ export class BoardContainerComponent implements OnInit {
 
   dataList = [
     {
-      title: 'todo',
+      title: 'Lead in',
+      subtitle: 'Rs 45000',
       items: [
-        'Get to work',
-        'Pick up groceries',
-        'Go home',
-        'Fall asleep'
+        {
+          dealTitle: 'Deal 1',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 2',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 3',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 4',
+          dealAmount: 'Rs 10000'
+        },
       ]
     },
     {
-      title: 'done',
+      title: 'Contact made',
+      subtitle: 'Rs 45000',
       items: [
-        'Get up',
-        'Brush teeth',
-        'Take a shower',
-        'Check e-mail',
-        'Walk dog'
+        {
+          dealTitle: 'Deal 1',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 2',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 3',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 4',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 5',
+          dealAmount: 'Rs 10000'
+        }
       ]
     },
     {
-      title: 'done1',
+      title: 'demo scheduled',
+      subtitle: 'Rs 45000',
       items: [
-        'Get up',
-        'Brush teeth',
-        'Take a shower',
-        'Check e-mail',
-        'Walk dog'
+        {
+          dealTitle: 'Deal 1',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 2',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 3',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 4',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 5',
+          dealAmount: 'Rs 10000'
+        }
       ]
     },
     {
-      title: 'done2',
+      title: 'proposal made',
+      subtitle: 'Rs 45000',
       items: [
-        'Get up',
-        'Brush teeth',
-        'Take a shower',
-        'Check e-mail',
-        'Walk dog'
+        {
+          dealTitle: 'Deal 1',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 2',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 3',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 4',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 5',
+          dealAmount: 'Rs 10000'
+        }
       ]
     },
     {
-      title: 'done3',
+      title: 'New Stage',
+      subtitle: 'Rs 45000',
       items: [
-        'Get up',
-        'Brush teeth',
-        'Take a shower',
-        'Check e-mail',
-        'Walk dog'
+        {
+          dealTitle: 'Deal 1',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 2',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 3',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 4',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 5',
+          dealAmount: 'Rs 10000'
+        }
       ]
     }
 
