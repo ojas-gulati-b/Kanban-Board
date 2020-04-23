@@ -1,0 +1,13 @@
+<div class="board-mobile-component">
+    <mat-tab-group  class="tab-group">
+        <mat-tab *ngFor="let list of data">
+            <ng-template mat-tab-label>
+                <div class="tab-heading">{{list.title}}</div>
+              </ng-template>
+            <div class="list-content" [ngClass]="list.title">
+                <div class="deal" *ngFor="let deal of list.items">{{deal}}</div>
+            </div>
+        </mat-tab>
+        
+      </mat-tab-group>
+</div>

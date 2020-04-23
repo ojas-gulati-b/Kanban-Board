@@ -12,7 +12,7 @@ import { SharedRoutingModule } from './shared-routing.module';
   imports: [
     CommonModule,
     DragDropModule,
-    SharedRoutingModule
+    // SharedRoutingModule
   ]
 })
 export class SharedModule { }
