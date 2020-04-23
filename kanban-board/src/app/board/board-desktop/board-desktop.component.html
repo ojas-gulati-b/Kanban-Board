@@ -1,0 +1,16 @@
+<div class="overall-container" cdkDropListGroup>
+    <div class="list-container">
+        <div class="card-container" *ngFor="let list of data">
+            <ng-container class="breadcrumb-wrap">
+                    <div class="breadcrumb">
+                            <div><a><span>{{list.title}}</span></a></div>
+                    </div>
+            </ng-container>
+
+            <div cdkDropList [cdkDropListData]="list.items" class="card-list" (cdkDropListDropped)="drop($event)">
+                <div class="card-box" *ngFor="let item of list.items" cdkDrag>{{item}}</div>
+            </div>
+        </div>
+    </div>
+
+</div>
