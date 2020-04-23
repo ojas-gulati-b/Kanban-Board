@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { BoardContainerComponent } from './board-container/board-container.component';
 import { BoardMobileComponent } from './board-mobile/board-mobile.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 const routes = [
   {
@@ -19,8 +21,13 @@ const routes = [
     CommonModule,
     SharedModule,
     MatTabsModule,
+    CarouselModule,
     RouterModule.forChild(routes),
   ],
-  exports : [RouterModule]
+  exports : [RouterModule],
+  providers: [{ 
+    provide: HAMMER_GESTURE_CONFIG,
+    useClass: HammerGestureConfig
+}]
 })
 export class BoardModule { }

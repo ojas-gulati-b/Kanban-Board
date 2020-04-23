@@ -1,6 +1,6 @@
 <div class="board-mobile-component">
-    <mat-tab-group  class="tab-group">
-        <mat-tab *ngFor="let list of data">
+    <!-- <mat-tab-group  class="tab-group" [(selectedIndex)]="selectedIndex" (selectedIndexChange)="selectChange()">
+        <mat-tab *ngFor="let list of data; let i = index" (swipeleft)="swipe(i+1, $event.type)" (swiperight)="swipe(i+1, $event.type)">
             <ng-template mat-tab-label>
                 <div class="tab-heading">{{list.title}}</div>
               </ng-template>
@@ -9,5 +9,19 @@
             </div>
         </mat-tab>
         
-      </mat-tab-group>
+      </mat-tab-group> -->
+
+    <owl-carousel-o [options]="customOptions" class="mobile-view">
+        <ng-container *ngFor="let stage of data">
+            <ng-template carouselSlide>
+                <div class="carousel-item-container">
+                    <div class="heading">{{stage.title}}</div>
+                    <div class="content">
+                        <div class="deal" *ngFor="let deal of stage.items">{{deal}}</div>
+                    </div>
+                </div>
+            </ng-template>
+        </ng-container>
+
+    </owl-carousel-o>
 </div>
