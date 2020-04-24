@@ -26,4 +26,8 @@ export class BoardDesktopComponent implements OnInit {
   ngOnInit() {
   }
 
+  addStage(){
+    return confirm('stage added');
+  }
+
 }

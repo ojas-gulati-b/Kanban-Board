@@ -1,7 +1,50 @@
 .overall-container{
-    width: 100%;
+    width: 100vw;
     background-color: rgb(247, 247, 247);
-    height: 100vh;
+    height: 100%;
+
+    .card-container {
+      min-width: 10px;
+      max-width: 100%;
+      flex-grow:1;
+      flex-basis: 0;
+      vertical-align: top;
+      position: relative;
+      &:first-child{
+        .breadcrumb{
+          .head-text, .subtext{
+            margin-left: 25px;
+          }
+        }
+      }
+      
+        .breadcrumb{
+          .head-text{
+            font-weight: bold;
+            margin-left:30px;
+          }
+          .subtext{
+            font-size:12px;
+            color:rgb(124, 121, 121);
+            display: inline-block;
+            margin-top: 6px;
+            margin-left: 30px;
+          }
+        }
+        .card-list{
+          .card-box{
+            .subtext{
+              font-size:12px;
+              color:rgb(124, 121, 121);
+              display: inline-block;
+              margin-top: 6px;
+              
+            }
+          }
+        }
+      
+    }
+
   }
   .card-headings{
       display: flex;
@@ -14,20 +57,11 @@
     display: flex;
     width: 100%;
   }
-  .card-container {
-    min-width: 10px;
-    max-width: 100%;
-    // margin: 0 25px 25px 0;
-    flex-grow:1;
-    flex-basis: 0;
-    vertical-align: top;
-    position: relative;
-  }
+  
   
   .card-list {
     border: solid 1px rgb(247, 247, 247);
     min-height: 60px;
-    // background: white;
     border-radius: 4px;
     overflow: hidden;
     display: block;
@@ -37,9 +71,6 @@
   
   .card-box {
     padding: 20px 10px;
-    // border-left: solid 1px #ccc;
-    // border-right: solid 1px #ccc;
-    //border-bottom: solid 4px rgb(247, 247, 247);
     color: rgba(0, 0, 0, 0.87);
     display: flex;
     flex-direction: row;
@@ -51,7 +82,6 @@
     margin-bottom: 4px;
     font-size: 14px;
     box-shadow: 0 0 1px 1px rgba(0,0,0,.05), 0 1px 2px -2px rgba(0,0,0,.06), 0 1px 3px 0 rgba(0,0,0,.07);
-    //box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
   }
   
   .cdk-drag-preview {
@@ -60,6 +90,9 @@
     box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
                 0 8px 10px 1px rgba(0, 0, 0, 0.14),
                 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+                .head-text{
+                  font-weight: bold;
+                }
   }
   
   .cdk-drag-placeholder {
@@ -71,7 +104,7 @@
   }
   
   .card-box:last-child {
-    // border: none;
+   
   }
   
   .card-list.cdk-drop-list-dragging .card-box:not(.cdk-drag-placeholder) {
@@ -79,7 +112,7 @@
   }
   
   body {
-    background: #eff4f7;
+    background: rgb(247, 247, 247);
     padding: 30px;
   }
   
@@ -87,9 +120,7 @@
     font-family: sans-serif;
     font-size: 14px;
     font-weight: bold;
-    color: #64768a;
-    // border: 2px solid #d7dade;
-    // border-radius: 5px;
+    color: #1c1d1f;
   }
   
   .breadcrumb-title {
@@ -98,35 +129,28 @@
   }
   
   .breadcrumb {
-    
-    // overflow: hidden;
     padding: 0;
     margin: 0;
     width: 100%;
   }
 
   .breadcrumb div {
-  // float: left;
   width:100%;
+  border-top:1px solid #d7dade;
+  border-bottom:1px solid #d7dade;
 }
 
 
 .breadcrumb div a {
-  color: #64768a;
+  color: #1c1d1f;
   text-decoration: none;
-  // min-width:100px;
-  // max-width:300px;
-  padding: 20px 0px 20px 0px;
+  padding: 10px 0px;
   background: #ffffff;
   position: absolute;
   display: block;
-  //float: left;
-  span{
-    margin-left: 45px;
-  }
 }
-.list-container .card-container:first-child .breadcrumb a span{
-  margin-left:10px;
+.list-container .card-container:first-child .breadcrumb a{
+  // margin-left:24px;
 }
 
 .breadcrumb div a:after {
@@ -136,7 +160,7 @@
   height: 0;
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-left: 30px solid #ffffff;
+  border-left: 15px solid #ffffff;
   position: absolute;
   top: 85%;
   margin-top: -50px;
@@ -151,7 +175,7 @@
   height: 0;
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-left: 30px solid #d7dade;
+  border-left: 15px solid #d7dade;
   position: absolute;
   top: 85%;
   margin-top: -50px;
@@ -161,29 +185,39 @@
 }
 
 .breadcrumb div:last-child a {
-  background: #eff4f7;
-  color: #64768a;
+  background: rgb(247, 247, 247);
+  color: #1c1d1f;
   cursor: default;
   position:relative;
   width:100%;
 }
 
-// .breadcrumb div:last-child a:hover {
-//   background: #ffffff;
-// }
-
 .breadcrumb div:last-child a:after {
-  border-left-color: #eff4f7;
+  border-left-color: rgb(247, 247, 247);
 }
 
-// .breadcrumb div:last-child a:hover:after {
-//   border-left-color: #ffffff;
-// }
 
-// .breadcrumb div a:hover {
-//   background: #eef3f6;
-// }
+.smaller-subtext{
+  font-size: 10px;
+  color:rgb(124, 121, 121);
+}
 
-// .breadcrumb div a:hover:after {
-//   border-left-color: #eef3f6;
-// }
+
+.card-box .head-text{
+  font-weight: bold;
+}
+
+.add-stage{
+  .add-icon{
+    opacity:0;
+    font-size:35px;
+    display:flex;
+    justify-content: center;
+
+  }
+}
+.card-list:hover .add-icon{
+  opacity:1;
+  background-color:rgb(228, 224, 224);
+  cursor: pointer;
+}

@@ -1,14 +1,38 @@
 <div class="overall-container" cdkDropListGroup>
+    
     <div class="list-container">
         <div class="card-container" *ngFor="let list of data">
             <ng-container class="breadcrumb-wrap">
                     <div class="breadcrumb">
-                            <div><a><span>{{list.title}}</span></a></div>
+                            <div>
+                            <a>
+                                <span class="head-text">{{list.subtitle}}</span>
+                                <br>
+                                <span class='subtext'>
+                                    <span>Rs 0</span>
+                                    <span>&#8226;</span>
+                                    {{list.items.length}} 
+                                    <span>deals</span>
+                                </span>
+                            </a>
+                            
+                            </div>
                     </div>
             </ng-container>
 
             <div cdkDropList [cdkDropListData]="list.items" class="card-list" (cdkDropListDropped)="drop($event)">
-                <div class="card-box" *ngFor="let item of list.items" cdkDrag>{{item}}</div>
+                <div class="card-box" *ngFor="let item of list.items" cdkDrag>
+                    <span><span class="head-text">{{item.dealTitle}} </span>
+                        <br> 
+                        <span class='subtext'> {{item.dealAmount}}</span>
+                        <br>
+                        <span class='smaller-subtext'>&#9906; Rs 0 </span>
+                    </span>
+                </div>
+                <div class="add-stage" (click)="addStage()">
+                        <span class="add-icon">&#43;</span>
+                </div>
+                
             </div>
         </div>
     </div>
