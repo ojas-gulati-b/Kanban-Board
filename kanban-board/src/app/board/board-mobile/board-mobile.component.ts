@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef, ViewChildren, QueryList, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
@@ -7,58 +7,38 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./board-mobile.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class BoardMobileComponent implements OnInit {
+export class BoardMobileComponent implements OnInit, AfterViewInit {
 
-  private tabsCount = 0;
-  selectedIndex: number = 1;
-  private SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
+  selectedIndex = 0;
   customOptions: OwlOptions = {
     loop: false,
     dots: false,
-    // navSpeed: 700,
-    // navText: ['', ''],
     items: 1,
     nav: false,
-    
-  }
-  linksOptions = {
-    loop: false,
-    dots: false,
-    items: 1,
-    nav: false
-  }
-  @Input() data = [];
+  };
 
-  constructor() { }
+  activeSliderOffset = '';
+  activeSliderWidth = '';
+  @Input() data = [];
+  @ViewChild('movingSlider', { static: true }) movingSlider: ElementRef;
+  @ViewChildren('staticSlider') staticSliders: QueryList<ElementRef>;
+
+  constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.tabsCount = this.data.length;
+
   }
 
-  selectChange(): void{
-    console.log("Selected INDEX: " + this.selectedIndex);
+  ngAfterViewInit() {
+    console.log(this.staticSliders.toArray());
+    this.activeSliderWidth = this.staticSliders.toArray()[0].nativeElement.offsetWidth;
+    this.changeDetectorRef.detectChanges();
   }
 
-  swipe(selectedIndex: number, action = this.SWIPE_ACTION.RIGHT) {
-    console.log('swipe');
-    console.log("number", selectedIndex);
-    console.log("action", action);
-    // Out of range
-    if (this.selectedIndex < 0/* starter point as 1 */ || this.selectedIndex > this.tabsCount/* here it is */) return;
-
-    // Swipe left, next tab
-    if (action === this.SWIPE_ACTION.LEFT) {
-      const isLast = this.selectedIndex === this.tabsCount;
-      this.selectedIndex = isLast ? 0 : this.selectedIndex + 1;
-      console.log("Swipe right - INDEX: " + this.selectedIndex);
-    }
-
-    // Swipe right, previous tab
-    if (action === this.SWIPE_ACTION.RIGHT) {
-      const isFirst = this.selectedIndex === 0 /* starter point as 1 */;
-      this.selectedIndex = isFirst ? 1 : this.selectedIndex - 1;
-      console.log("Swipe left - INDEX: " + this.selectedIndex);
-    }
+  selectChange(event): void {
+    console.log(event);
+    this.selectedIndex = event.startPosition;
+    this.activeSliderOffset = this.staticSliders.toArray()[event.startPosition].nativeElement.offsetLeft;
   }
 
 }

@@ -1,4 +1,6 @@
 .board-mobile-component {
+    position: relative;
+    width: 100%;
     // .tab-group{
     //     .mat-tab-header{
     //         .mat-tab-header-pagination{
@@ -58,7 +60,7 @@
             }
             .content {
                 // padding: 0 12px;
-                height: calc(100vh - 50px);
+                // height: calc(100vh - 50px);
                 background-color: rgb(247, 247, 247);
                 .deal {
                     padding: 14px 10px;
@@ -76,6 +78,41 @@
                         display: flex;
                     }
                 }
+            }
+        }
+    }
+    .sliders {
+        position: absolute;
+        width: 100%;
+        top: 56px;
+        z-index: 2;
+        
+        .sliders-container {
+            position: relative;
+            display: flex;
+            width: 100%;
+            .block {
+                height: 4px;
+                border-radius: 2px;
+                width: 30px;
+                background-color: #A9A9A9;
+                margin-right: 5px;
+                transition: 0.5s;
+                flex-basis: 0;
+                flex-grow: 1;
+                &.active {
+                    background-color: black;
+                }
+            }
+            .active-block{
+                position: absolute;
+                border-radius: 2px;
+                top: 0px;
+                left: 0px;
+                height: 4px;
+                // width: 60px;
+                background-color: #696969;
+                transition: 0.5s cubic-bezier(0.35, 0, 0.25, 1);
             }
         }
     }

@@ -11,7 +11,7 @@
         
       </mat-tab-group> -->
 
-    <owl-carousel-o [options]="customOptions" class="mobile-view">
+    <owl-carousel-o [options]="customOptions" class="mobile-view" (translated)="selectChange($event)">
         <ng-container *ngFor="let stage of data">
             <ng-template carouselSlide>
                 <div class="carousel-item-container">
@@ -33,6 +33,14 @@
                 </div>
             </ng-template>
         </ng-container>
-
     </owl-carousel-o>
+    <div class="sliders">
+        <div class="sliders-container">
+            <div *ngFor="let stage of data; let i = index" class="block" #staticSlider ></div>
+            <div class="active-block" #movingSlider [style.left]="this.activeSliderOffset + 'px'" [style.width]="this.activeSliderWidth + 'px'"></div>
+        </div>
+        
+        
+    </div>
+        
 </div>
