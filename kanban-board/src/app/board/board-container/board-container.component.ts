@@ -53,6 +53,14 @@ export class BoardContainerComponent implements OnInit {
         {
           dealTitle: 'Deal 5',
           dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 6',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 7',
+          dealAmount: 'Rs 10000'
         }
       ]
     },
@@ -78,6 +86,22 @@ export class BoardContainerComponent implements OnInit {
         },
         {
           dealTitle: 'Deal 5',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 6',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 7',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 8',
+          dealAmount: 'Rs 10000'
+        },
+        {
+          dealTitle: 'Deal 9',
           dealAmount: 'Rs 10000'
         }
       ]
