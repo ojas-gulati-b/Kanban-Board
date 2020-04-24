@@ -7,6 +7,8 @@ import { BoardMobileComponent } from './board-mobile/board-mobile.component';
 import {MatTabsModule, MatButtonModule, MatIconModule} from '@angular/material';
 import { HAMMER_GESTURE_CONFIG, HammerGestureConfig } from '@angular/platform-browser';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { BoardDesktopComponent } from './board-desktop/board-desktop.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 const routes = [
   {
@@ -16,7 +18,7 @@ const routes = [
 ];
 
 @NgModule({
-  declarations: [BoardContainerComponent, BoardMobileComponent],
+  declarations: [BoardContainerComponent, BoardMobileComponent, BoardDesktopComponent],
   imports: [
     CommonModule,
     SharedModule,
@@ -25,6 +27,7 @@ const routes = [
     MatButtonModule,
     MatIconModule,
     RouterModule.forChild(routes),
+    DragDropModule
   ],
   exports : [RouterModule],
   providers: [{ 
