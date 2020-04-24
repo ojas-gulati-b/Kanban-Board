@@ -1,5 +1,9 @@
-import { Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef, ViewChildren, QueryList, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import {
+  Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef, ViewChildren, QueryList,
+  AfterViewInit, ChangeDetectorRef, Output, EventEmitter
+} from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { DealData } from '../board-container/board-container.component';
 
 @Component({
   selector: 'app-board-mobile',
@@ -22,6 +26,7 @@ export class BoardMobileComponent implements OnInit, AfterViewInit {
   @Input() data = [];
   @ViewChild('movingSlider', { static: true }) movingSlider: ElementRef;
   @ViewChildren('staticSlider') staticSliders: QueryList<ElementRef>;
+  @Output() addDeal = new EventEmitter<DealData>();
 
   constructor(private changeDetectorRef: ChangeDetectorRef) { }
 
@@ -39,6 +44,17 @@ export class BoardMobileComponent implements OnInit, AfterViewInit {
     console.log(event);
     this.selectedIndex = event.startPosition;
     this.activeSliderOffset = this.staticSliders.toArray()[event.startPosition].nativeElement.offsetLeft;
+  }
+
+  onAddDeal() {
+    this.addDeal.emit({
+      stageID: this.data[this.selectedIndex].stageID,
+      deal: {
+        dealID: 'DealNew',
+        dealTitle: 'New Deal',
+        dealAmount: 'Rs 5000'
+      },
+    });
   }
 
 }
