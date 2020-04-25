@@ -1,5 +1,7 @@
 <div class="overall-container" cdkDropListGroup>
-    
+    <div class="add-stage-container">
+        <button mat-button color="primary" (click)="addStage()" class="add-stage-button">Add Stage</button>
+    </div>
     <div class="list-container">
         <div class="card-container" *ngFor="let list of data">
             <ng-container class="breadcrumb-wrap">

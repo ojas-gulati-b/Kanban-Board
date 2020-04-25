@@ -2,6 +2,15 @@
     width: 100vw;
     background-color: rgb(247, 247, 247);
     height: 100%;
+    .add-stage-container{
+      display: flex;
+      justify-content: flex-end;
+      padding: 5px 20px;
+      .add-stage-button{
+        background-color: #ffffff;
+        color: #000000;
+      }
+    }
 
     .card-container {
       min-width: 10px;
@@ -12,6 +21,9 @@
       position: relative;
       &:first-child{
         .breadcrumb{
+          position: sticky;
+          top: 0px;
+           // z-index: 1;
           .head-text, .subtext{
             margin-left: 25px;
           }
@@ -19,6 +31,9 @@
       }
       
         .breadcrumb{
+          position: sticky;
+          top: 0px;
+          // z-index: 2;
           .head-text{
             font-weight: bold;
             margin-left:30px;
