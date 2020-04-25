@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { DealData } from '../board-container/board-container.component';
+import { DealData, StageData } from '../board-container/board-container.component';
+
 
 @Component({
   selector: 'app-board-desktop',
@@ -11,7 +12,8 @@ export class BoardDesktopComponent implements OnInit {
 
   @Input() data = [];
   @Output() addDeal = new EventEmitter<DealData>();
- 
+  @Output() addStage = new EventEmitter<StageData>();
+  counter = 0;
   constructor() { }
 
   ngOnInit() {
@@ -36,6 +38,15 @@ export class BoardDesktopComponent implements OnInit {
         dealTitle: 'New Deal',
         dealAmount: 'Rs 5000'
       },
+    });
+  }
+
+  onAddStage(){
+    this.addStage.emit({
+      stageID: `NewStage${this.counter++}`,
+      title: 'New Stage',
+      subtitle: 'Rs 15000',
+      items: []
     });
   }
 

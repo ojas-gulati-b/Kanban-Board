@@ -5,12 +5,11 @@ export interface DealData {
  deal: any;
 }
 export interface StageData {
-  stage: {
     stageID: string;
     title: string;
     subtitle: string;
     items: Array<any>;
-  };
+  
  }
 
 @Component({
@@ -221,6 +220,11 @@ export class BoardContainerComponent implements OnInit {
         }
       });
     }
+  }
+
+  addStage(stage : StageData){
+    this.dataList.push(stage);
+
   }
 
 }

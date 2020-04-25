@@ -6,9 +6,13 @@
       display: flex;
       justify-content: flex-end;
       padding: 5px 20px;
+      position:sticky;
+      background-color: rgb(247, 247, 247);
+      top:0;
       .add-stage-button{
-        background-color: #ffffff;
-        color: #000000;
+        background-color: rgb(75, 163, 79);
+        color: #ffffff;
+      
       }
     }
 
@@ -20,31 +24,47 @@
       vertical-align: top;
       position: relative;
       &:first-child{
-        .breadcrumb{
-          position: sticky;
-          top: 0px;
-           // z-index: 1;
-          .head-text, .subtext{
-            margin-left: 25px;
+          .breadcrumb{
+            .breadcrumb-wrapper{
+            position: sticky;
+            top: 46px;
+            .head-text, .subtext{
+              padding-left: 25px;
+            }
           }
         }
+        
       }
       
         .breadcrumb{
           position: sticky;
-          top: 0px;
+          top: 46px;
           // z-index: 2;
-          .head-text{
-            font-weight: bold;
-            margin-left:30px;
+          .breadcrumb-wrapper{
+            
+            .head-text{
+              font-weight: bold;
+              padding-left:30px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              text-transform: capitalize;
+            }
+            .subtext{
+              font-size:12px;
+              color:rgb(124, 121, 121);
+              margin-top: 6px;
+              padding-left: 30px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              text-transform: capitalize;
+              .dot{
+                margin: 0 5px;
+              }
+            }
           }
-          .subtext{
-            font-size:12px;
-            color:rgb(124, 121, 121);
-            display: inline-block;
-            margin-top: 6px;
-            margin-left: 30px;
-          }
+          
         }
         .card-list{
           .card-box{
@@ -53,7 +73,8 @@
               color:rgb(124, 121, 121);
               display: inline-block;
               margin-top: 6px;
-              
+              text-transform: capitalize;
+              word-break: break-word;
             }
           }
         }
@@ -107,6 +128,8 @@
                 0 3px 14px 2px rgba(0, 0, 0, 0.12);
                 .head-text{
                   font-weight: bold;
+                  text-transform: capitalize;
+                  word-break: break-word;
                 }
   }
   
@@ -149,7 +172,7 @@
     width: 100%;
   }
 
-  .breadcrumb div {
+  .breadcrumb div.breadcrumb-wrapper {
   width:100%;
   border-top:1px solid #d7dade;
   border-bottom:1px solid #d7dade;
@@ -163,19 +186,21 @@
   background: #ffffff;
   position: absolute;
   display: block;
+  width: 100%;
+  white-space: nowrap;
 }
 .list-container .card-container:first-child .breadcrumb a{
   // margin-left:24px;
 }
 
-.breadcrumb div a:after {
+.card-container:not(:last-child) .breadcrumb div a:after {
   content: "";
   display: block;
   width: 0;
   height: 0;
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-left: 15px solid #ffffff;
+  border-left: 15px solid #f7f7f7;
   position: absolute;
   top: 85%;
   margin-top: -50px;
@@ -183,7 +208,7 @@
   z-index: 2;
 }
 
-.breadcrumb div a:before {
+.card-container:not(:last-child) .breadcrumb div a:before {
   content: "";
   display: block;
   width: 0;
@@ -204,7 +229,7 @@
   color: #1c1d1f;
   cursor: default;
   position:relative;
-  width:100%;
+  // width:100%;
 }
 
 .breadcrumb div:last-child a:after {
@@ -213,16 +238,27 @@
 
 
 .smaller-subtext{
-  font-size: 10px;
+  font-size: 12px;
   color:rgb(124, 121, 121);
+  display: flex;
+  align-items: center;
+  .person-icon{
+    font-size: 20px;
+    height: 12px
+  }
+  .amount{
+    margin-top: 7px;
+  }
 }
 
 
 .card-box .head-text{
   font-weight: bold;
+  text-transform: capitalize;
+  word-break: break-word;
 }
 
-.add-stage{
+.add-deal{
   .add-icon{
     opacity:0;
     font-size:35px;
