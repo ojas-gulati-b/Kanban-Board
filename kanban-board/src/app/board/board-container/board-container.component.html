@@ -1,6 +1,6 @@
 <div class="board-container">
     <div class="board-desktop">
-        <app-board-desktop [data]="dataList"></app-board-desktop>
+        <app-board-desktop [data]="dataList" (addDeal)="addStageDeal($event)"></app-board-desktop>
     </div>
     <div class="board-mobile">
         <app-board-mobile [data]="dataList" (addDeal)="addStageDeal($event)"></app-board-mobile>

@@ -1,7 +1,7 @@
 <div class="overall-container" cdkDropListGroup>
     
     <div class="list-container">
-        <div class="card-container" *ngFor="let list of data">
+        <div class="card-container" *ngFor="let list of data; let i = index;">
             <ng-container class="breadcrumb-wrap">
                     <div class="breadcrumb">
                             <div>
@@ -29,7 +29,7 @@
                         <span class='smaller-subtext'>&#9906; Rs 0 </span>
                     </span>
                 </div>
-                <div class="add-stage" (click)="addStage()">
+                <div class="add-stage" (click)="onAddDeal(i)">
                         <span class="add-icon">&#43;</span>
                 </div>
                 
