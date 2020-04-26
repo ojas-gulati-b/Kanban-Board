@@ -103,6 +103,14 @@
     display: block;
     margin: 6px;
     margin-left: 20px;
+    height: calc(100% - 75px);
+    &.highlight{
+      background-color: gray;
+    }
+    &.cdk-drop-list-dragging{
+      background-color: #DCDCDC;
+      border: 2px dashed #696969;
+    }
   }
   
   .card-box {
@@ -264,11 +272,13 @@
     font-size:35px;
     display:flex;
     justify-content: center;
-
+    &:hover{
+      background-color:rgb(228, 224, 224);
+    }
   }
 }
 .card-list:hover .add-icon{
   opacity:1;
-  background-color:rgb(228, 224, 224);
+  
   cursor: pointer;
 }

@@ -14,6 +14,7 @@ export class BoardDesktopComponent implements OnInit {
   @Output() addDeal = new EventEmitter<DealData>();
   @Output() addStage = new EventEmitter<StageData>();
   counter = 0;
+  itemEntered = false;
   constructor() { }
 
   ngOnInit() {
@@ -48,6 +49,9 @@ export class BoardDesktopComponent implements OnInit {
       subtitle: 'Rs 15000',
       items: []
     });
+  }
+  itemState(){
+    console.log('entered')
   }
 
 }
