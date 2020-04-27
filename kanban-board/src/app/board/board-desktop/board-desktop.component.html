@@ -1,4 +1,4 @@
-<div class="overall-container" cdkDropListGroup>
+<div class="overall-container" cdkDropListGroup *ngIf="data && data.length > 0">
     <div class="add-stage-container" [style.z-index]="data.length+1">
         <button mat-button color="primary" (click)="onAddStage()" class="add-stage-button">Add Stage</button>
     </div>
@@ -8,9 +8,9 @@
                 <div class="breadcrumb" [style.z-index]="data.length - i">
                     <div class="breadcrumb-wrapper">
                         <a>
-                            <div class="head-text" [matTooltip]="list.subtitle">{{list.title}}</div>
+                            <div class="head-text" [matTooltip]="list.title" matTooltipClass="stage-tooltip-class">{{list.title}}</div>
 
-                            <div class='subtext'>
+                            <div class='subtext' [matTooltip]="list.subtitle > 0 ? getStageSubtextTooltip(list) : ''" matTooltipClass="stage-tooltip-class">
                                 <span>{{list.subtitle}}</span>
                                 <span class="dot">&#8226;</span>{{list.items.length}}
                                 <span>deals</span>
@@ -22,7 +22,8 @@
             </ng-container>
 
             <div cdkDropList [cdkDropListData]="list.items" autoScrollDisabled="false" class="card-list"
-                [ngClass]="itemEntered ? 'highlight': ''" (entered)="itemState()"  (cdkDropListDropped)="drop($event)">
+                cdkDropListSortingDisabled="true" (cdkDropListEntered)="enterList(list)" cdkDropListSorted="true"
+                [ngClass]="itemEntered ? 'highlight': ''" (entered)="itemState()" (cdkDropListDropped)="drop($event)">
                 <div class="card-box" *ngFor="let item of list.items" cdkDrag>
                     <span><span class="head-text">{{item.dealTitle}} </span>
                         <br>

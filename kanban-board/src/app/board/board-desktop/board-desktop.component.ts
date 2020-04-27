@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges, OnChanges } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { DealData, StageData } from '../board-container/board-container.component';
 
@@ -8,7 +8,7 @@ import { DealData, StageData } from '../board-container/board-container.componen
   templateUrl: './board-desktop.component.html',
   styleUrls: ['./board-desktop.component.scss']
 })
-export class BoardDesktopComponent implements OnInit {
+export class BoardDesktopComponent implements OnInit, OnChanges {
 
   @Input() data = [];
   @Output() addDeal = new EventEmitter<DealData>();
@@ -20,6 +20,15 @@ export class BoardDesktopComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if(this.data && this.data.length > 0){
+      this.data = this.data.map(stage => ({
+        ...stage,
+        disabled: false
+      }));
+    }
+  }
+
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -27,7 +36,7 @@ export class BoardDesktopComponent implements OnInit {
       transferArrayItem(event.previousContainer.data,
         event.container.data,
         event.previousIndex,
-        event.currentIndex);
+        event.container.data.length);
     }
   }
 
@@ -50,8 +59,11 @@ export class BoardDesktopComponent implements OnInit {
       items: []
     });
   }
-  itemState(){
-    console.log('entered')
+  enterList(stage){
+    // stage.disabled = true;
+  }
+  getStageSubtextTooltip(stage) {
+    return `Total`
   }
 
 }

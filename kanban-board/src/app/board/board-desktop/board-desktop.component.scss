@@ -102,15 +102,22 @@
     overflow: hidden;
     display: block;
     margin: 6px;
-    margin-left: 20px;
+    margin-left: 8px;
     height: calc(100% - 75px);
+    .cdk-drag-placeholder{
+      opacity: 0;
+    }
    
     &.cdk-drop-list-dragging{
       background-color: #DCDCDC;
       border: 2px dashed #696969;
-      /* .add-deal .add-icon{
+      .card-box.cdk-drag-placeholder{
+        display: none;
+      }
+      .add-deal .add-icon{
         opacity: 0;
-      } */
+      }
+      
     }
   }
   
@@ -122,7 +129,7 @@
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    cursor: move;
+    cursor: pointer;
     background: white;
     margin-bottom: 4px;
     font-size: 14px;
@@ -140,6 +147,14 @@
                   text-transform: capitalize;
                   word-break: break-word;
                 }
+                .subtext{
+                  font-size:12px;
+                  color:rgb(124, 121, 121);
+                  display: inline-block;
+                  margin-top: 6px;
+                  text-transform: capitalize;
+                  word-break: break-word;
+                }
   }
   
   .cdk-drag-placeholder {
@@ -147,7 +162,7 @@
   }
   
   .cdk-drag-animating {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    // transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
   
   .card-box:last-child {
@@ -209,7 +224,7 @@
   height: 0;
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-left: 15px solid #f7f7f7;
+  border-left: 10px solid #f7f7f7;
   position: absolute;
   top: 85%;
   margin-top: -50px;
@@ -224,7 +239,7 @@
   height: 0;
   border-top: 30px solid transparent;
   border-bottom: 30px solid transparent;
-  border-left: 15px solid #d7dade;
+  border-left: 10px solid #d7dade;
   position: absolute;
   top: 85%;
   margin-top: -50px;
@@ -282,4 +297,7 @@
   opacity:1;
   
   cursor: pointer;
+}
+.stage-tooltip-class{
+  background-color: #000000;
 }
