@@ -104,12 +104,13 @@
     margin: 6px;
     margin-left: 20px;
     height: calc(100% - 75px);
-    &.highlight{
-      background-color: gray;
-    }
+   
     &.cdk-drop-list-dragging{
       background-color: #DCDCDC;
       border: 2px dashed #696969;
+      /* .add-deal .add-icon{
+        opacity: 0;
+      } */
     }
   }
   

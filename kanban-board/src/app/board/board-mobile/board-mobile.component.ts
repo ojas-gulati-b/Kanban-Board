@@ -35,13 +35,13 @@ export class BoardMobileComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log(this.staticSliders.toArray());
+    // console.log(this.staticSliders.toArray());
     this.activeSliderWidth = this.staticSliders.toArray()[0].nativeElement.offsetWidth;
     this.changeDetectorRef.detectChanges();
   }
 
   selectChange(event): void {
-    console.log(event);
+    // console.log(event);
     this.selectedIndex = event.startPosition;
     this.activeSliderOffset = this.staticSliders.toArray()[event.startPosition].nativeElement.offsetLeft;
   }
