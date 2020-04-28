@@ -1,6 +1,6 @@
 import {
   Component, OnInit, Input, ViewEncapsulation, ViewChild, ElementRef, ViewChildren, QueryList,
-  AfterViewInit, ChangeDetectorRef, Output, EventEmitter
+  AfterViewInit, ChangeDetectorRef, Output, EventEmitter, HostListener
 } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { DealData } from '../board-container/board-container.component';
@@ -55,6 +55,14 @@ export class BoardMobileComponent implements OnInit, AfterViewInit {
         dealAmount: 'Rs 5000'
       },
     });
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if (event.target.innerWidth <= 768) {
+      this.activeSliderWidth = this.staticSliders.toArray()[0].nativeElement.offsetWidth;
+      this.changeDetectorRef.detectChanges();
+    }
   }
 
 }
