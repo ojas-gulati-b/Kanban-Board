@@ -22,7 +22,7 @@
 
             <div cdkDropList [cdkDropListData]="list.items" autoScrollDisabled="false" class="card-list"
                 cdkDropListSortingDisabled="true" (cdkDropListEntered)="enterList(list)" cdkDropListSorted="true"
-                (entered)="itemState()" (cdkDropListDropped)="drop($event)">
+                (cdkDropListDropped)="drop($event)">
                 <div class="card-box" *ngFor="let item of list.items" cdkDrag>
                     <span><span class="head-text">{{item.dealTitle}} </span>
                         <br>
