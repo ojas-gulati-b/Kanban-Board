@@ -8,8 +8,8 @@
                 <div class="breadcrumb" [style.z-index]="data.length - i">
                     <div class="breadcrumb-wrapper">
                         <a>
-                            <div class="head-text" [matTooltip]="list.title" matTooltipClass="stage-tooltip-class">{{list.title}}</div>
-                            <div class='subtext'>
+                            <div class="head-text" [matTooltip]="list.title" matTooltipClass="maintext-tooltip">{{list.title}}</div>
+                            <div class='subtext' (mouseenter)="list.subtextHovered = true" (mouseleave)="list.subtextHovered = false">
                                 <span>{{list.subtitle}}</span>
                                 <span class="dot">&#8226;</span>{{list.items.length}}
                                 <span>deals</span>
@@ -39,7 +39,17 @@
                 </div>
 
             </div>
+            <div class="subtext-tooltip" [style.display]="list.subtextHovered ? 'block' : 'none'" [style.z-index]="data.length - i + 1" >
+                <div class="total">Total</div>
+                <div class='subtext'>
+                    <span>{{list.subtitle}}</span>
+                    <span class="dot">&#8226;</span>{{list.items.length}}
+                    <span>deals</span>
+                </div>
+            </div>
         </div>
+        
     </div>
+    
 
 </div>

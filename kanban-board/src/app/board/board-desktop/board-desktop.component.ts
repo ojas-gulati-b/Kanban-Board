@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { DealData, StageData } from '../board-container/board-container.component';
 
@@ -6,7 +6,8 @@ import { DealData, StageData } from '../board-container/board-container.componen
 @Component({
   selector: 'app-board-desktop',
   templateUrl: './board-desktop.component.html',
-  styleUrls: ['./board-desktop.component.scss']
+  styleUrls: ['./board-desktop.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class BoardDesktopComponent implements OnInit {
 
